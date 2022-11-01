@@ -1,21 +1,20 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import {
   faAddressBook
 } from '@fortawesome/free-regular-svg-icons';
-
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <div className='sss'>
-        <Icon icon={faAddressBook}/>
-      </div>
-
-      <button className="btn">Button</button>
-
+    <div className="app">
+      {/* <Icon icon={faAddressBook}/> */}
+      <Link href="/auth/login">
+        <button className="btn mr-2">login</button>
+      </Link>
+      <Link href="/auth/register">
+        <button className="btn ml-2">register</button>
+      </Link>
+      <Icon icon={faAddressBook}/>
     </div>
   );
 };
