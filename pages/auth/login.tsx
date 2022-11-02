@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import bog from '../../public/assests/bog.png';
-import fb from '../../public/assests/fb.png';
-import google from '../../public/assests/google.png';
+import bog from '../../public/assets/bog.png';
+import fb from '../../public/assets/fb.png';
+import google from '../../public/assets/google.png';
 import Link from 'next/link';
 
 export function login() {
