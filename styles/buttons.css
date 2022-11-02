@@ -1,0 +1,8 @@
+.btn-secondary {
+   border-width: 2px;
+   border-color: theme('colors.gray.300');
+   &:hover {
+      border-width: 2px;
+      border-color: theme('colors.gray.300');
+   }
+}

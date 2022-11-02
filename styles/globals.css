@@ -1,56 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+@import './buttons';
+
+@import 'tailwindcss/utilities';
+
+a {
+   text-decorations: none;
+}
 
 .app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #ffffff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   min-height: 100vh;
+   background-color: #ffffff;
 }
+
 .auth-form {
-  min-width: 335px;
-  width: 520px;
-  margin-left: 20px;
-  margin-right: 20px;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 8px;
-  background-color: rgb(255, 243, 243);
-  height: auto;
-  align-items: center;
+   min-width: 335px;
+   width: 520px;
+   margin-left: 20px;
+   margin-right: 20px;
+   box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+   padding-top: 30px;
+   padding-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   border-radius: 8px;
+   background-color: #fff;
+   height: auto;
+   align-items: center;
+
+   & input {
+      max-width: 100%;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+   }
+
+   & button {
+      width: 100%;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      position: relative;
+   }
 }
-.auth-form input {
-  max-width: 100%;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-.auth-form button {
-  width: 100%;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  position: relative;
-}
+
 .auth-image-div {
-  position: absolute;
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  inset-inline-start: 1rem;
+   position: absolute;
+   display: inline-flex;
+   -webkit-box-align: center;
+   align-items: center;
+   inset-inline-start: 1rem;
 }
+
 .hr-line {
-  position: absolute;
-  left: 50%;
-  background: #fff3f3;
-  transform: translate(-50%, -50%);
-  top: 0px;
-  padding: 0px 10px;
-  min-width: 40%;
-  text-align: center;
-  white-space: nowrap;
+   position: absolute;
+   left: 50%;
+   background: white;
+   transform: translate(-50%, -50%);
+   top: 0px;
+   padding: 0px 20px;
+   text-align: center;
+   white-space: nowrap;
 }
