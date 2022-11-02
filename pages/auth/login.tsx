@@ -4,33 +4,38 @@ import bog from '../../public/assests/bog.png';
 import fb from '../../public/assests/fb.png';
 import google from '../../public/assests/google.png';
 import Link from 'next/link';
-export interface IAppProps {
-}
 
 export function login() {
+
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         // Preventing the page from reloading
         event.preventDefault();
-
         // Do something
         console.log('submited');
     };
+
     return (
         <div className="app">
             <div className="auth-form" >
-                <div className='auth-header-text'>Log in</div>
-                <div className='pb-3 ml-1'>New user? <Link href="/auth/register"><a className="link link-primary">Register now </a></Link></div>
+                <div>
+                    <div className='text-4xl text-center pb-5'>Log in</div>
+                </div>
+
                 <form onSubmit={submitForm}>
                     <input type="Email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
                     <input type="Password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
-                    <button className="btn btn-primary btn-wide">Submit</button>
+                    <button className="btn btn-primary btn-wide">Log In</button>
                 </form>
-                <div><a className="link link-primary mt-5 ml-6">Forget Your Password?</a></div>
-                {/* არ მუშაობს კარგად მობილურ ვერსიაზე */}
-                <h2 className='hr-lines'>  or continue with  </h2>
-                {/* არ მუშაობს კარგად მობილურ ვერსიაზე */}
+
+                <div className="text-center my-2"><a className="link link-primary mt-5">Forgot Your Password?</a></div>
+                <div className="relative my-8">
+                    <div className="bg-black h-0.5">
+                    </div>
+                    <div className="hr-line">  or continue with  </div>
+                </div>
+
                 <div>
-                    <button className="btn btn-outline hover:text-black text-[#F4B400] hover:bg-[#0F9D58]">
+                    <button className="btn btn-outline hover:text-white text-google hover:bg-google">
                         <div className='auth-image-div'>
                             <Image
                                 src={google}
@@ -68,9 +73,14 @@ export function login() {
                         bog
                     </button>
                 </div>
+
+                <div className="relative my-8">
+                    <div className="bg-black h-0.5">
+                    </div>
+                    <div className="hr-line">  <div className="text-center my-2">New user? <Link href="/auth/register"><a className="link link-primary">Register now </a></Link></div> </div>
+                </div>
             </div>
         </div>
-
     );
 }
 export default login;

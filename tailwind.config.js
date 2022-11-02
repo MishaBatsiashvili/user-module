@@ -10,7 +10,7 @@ module.exports = {
         'primary': '#fe5f0a',
         'bog': '#fe5f0a',
         'fb': '#3975EA',
-        'google': '',
+        'google': '#0F9D58',
       },
     },
   },
@@ -20,8 +20,8 @@ module.exports = {
       {
         light: {
           ...require('daisyui/src/colors/themes')['[data-theme=light]'],
-          primary: 'red',
-          'primary-focus': '#fe5f0a',
+          primary: '#5F9DF7',
+          'primary-focus': '#1746A2',
         },
       }
     ],
