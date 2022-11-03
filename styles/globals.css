@@ -21,7 +21,8 @@
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 8px;
-  background-color: rgb(255, 243, 243);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 22px 2px #ccc;
   height: auto;
   align-items: center;
 }
@@ -46,7 +47,7 @@
 .hr-line {
   position: absolute;
   left: 50%;
-  background: #fff3f3;
+  background: #ffffff;
   transform: translate(-50%, -50%);
   top: 0px;
   padding: 0px 10px;

@@ -4,6 +4,8 @@ import bog from '../../public/assests/bog.png';
 import fb from '../../public/assests/fb.png';
 import google from '../../public/assests/google.png';
 import Link from 'next/link';
+export interface IAppProps {
+}
 
 export function login() {
 
@@ -39,7 +41,7 @@ export function login() {
                         <div className='auth-image-div'>
                             <Image
                                 src={google}
-                                alt="Picture of the author"
+                                alt="google"
                                 width={30}
                                 height={30}
                             />
@@ -51,12 +53,12 @@ export function login() {
                         <div className='auth-image-div'>
                             <Image
                                 src={fb}
-                                alt="Picture of the author"
+                                alt="facebook"
                                 width={30}
                                 height={30}
                             />
                         </div>
-                        fb
+                        facebook
                     </button>
 
                     <button className="btn btn-outline group hover:text-white text-bog hover:bg-bog">
@@ -65,12 +67,12 @@ export function login() {
                             <Image
                                 className='group-hover:bg-white group-hover:rounded'
                                 src={bog}
-                                alt="Picture of the author"
+                                alt="bank of georgia"
                                 width={30}
                                 height={30}
                             />
                         </div>
-                        bog
+                        bank of georgia
                     </button>
                 </div>
 
