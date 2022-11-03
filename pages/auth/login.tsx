@@ -47,7 +47,7 @@ export function login() {
             </div>
 
             <div>
-               <GoogleButton />
+               <GoogleButton onClick={() => {alert('123');}} />
                <FacebookButton />
                <BogButton />
             </div>

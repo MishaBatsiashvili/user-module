@@ -1,9 +1,6 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "eslint:recommended"
-  ],
-  "rules": {
-    "semi": ["error", "always"]
-  }
+   "extends": ["next/core-web-vitals", "eslint:recommended"],
+   "rules": {
+      "semi": ["error", "always"]
+   }
 }
