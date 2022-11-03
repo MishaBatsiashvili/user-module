@@ -20,7 +20,9 @@ export function login() {
       <div className='app'>
          <AuthFormWrapper>
             <div>
-               <div className='pb-5 text-center text-4xl'>შესვლა</div>
+               <div className='pb-8 text-center text-2xl font-bold leading-relaxed'>
+                  შედით ანგარიშში
+               </div>
             </div>
 
             <form onSubmit={submitForm}>
