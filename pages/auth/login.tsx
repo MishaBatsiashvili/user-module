@@ -1,88 +1,71 @@
 import React from 'react';
-import Image from 'next/image';
-import bog from '../../public/assests/bog.png';
-import fb from '../../public/assests/fb.png';
-import google from '../../public/assests/google.png';
 import Link from 'next/link';
-export interface IAppProps {
-}
+import TextHr from '../../components/common/TextHr';
+import AuthFormWrapper from '../../components/features/auth/AuthFormWrapper';
+import GoogleButton from '../../components/common/buttons/auth/GoogleButton';
+import FacebookButton from '../../components/common/buttons/auth/FacebookButton';
+import BogButton from '../../components/common/buttons/auth/BogButton';
 
 export function login() {
+   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+      // Preventing the page from reloading
+      event.preventDefault();
+      // Do something
+      console.log('submited');
+   };
 
-    const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
-        // Preventing the page from reloading
-        event.preventDefault();
-        // Do something
-        console.log('submited');
-    };
-
-    return (
-        <div className="app">
-            <div className="auth-form" >
-                <div>
-                    <div className='text-4xl text-center pb-5'>Log in</div>
-                </div>
-
-                <form onSubmit={submitForm}>
-                    <input type="Email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
-                    <input type="Password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
-                    <button className="btn btn-primary btn-wide">Log In</button>
-                </form>
-
-                <div className="text-center my-2"><a className="link link-primary mt-5">Forgot Your Password?</a></div>
-                <div className="relative my-8">
-                    <div className="bg-black h-0.5">
-                    </div>
-                    <div className="hr-line">  or continue with  </div>
-                </div>
-
-                <div>
-                    <button className="btn btn-outline hover:text-white text-google hover:bg-google">
-                        <div className='auth-image-div'>
-                            <Image
-                                src={google}
-                                alt="google"
-                                width={30}
-                                height={30}
-                            />
-                        </div>
-                        google
-                    </button>
-
-                    <button className="btn btn-outline hover:text-white text-fb hover:bg-fb">
-                        <div className='auth-image-div'>
-                            <Image
-                                src={fb}
-                                alt="facebook"
-                                width={30}
-                                height={30}
-                            />
-                        </div>
-                        facebook
-                    </button>
-
-                    <button className="btn btn-outline group hover:text-white text-bog hover:bg-bog">
-                        <div className='auth-image-div'>
-                            {/* image ზე ჰოვერი მუშაობს როცა სურათთან მიგვაქვს მაუსი */}
-                            <Image
-                                className='group-hover:bg-white group-hover:rounded'
-                                src={bog}
-                                alt="bank of georgia"
-                                width={30}
-                                height={30}
-                            />
-                        </div>
-                        bank of georgia
-                    </button>
-                </div>
-
-                <div className="relative my-8">
-                    <div className="bg-black h-0.5">
-                    </div>
-                    <div className="hr-line">  <div className="text-center my-2">New user? <Link href="/auth/register"><a className="link link-primary">Register now </a></Link></div> </div>
-                </div>
+   return (
+      <div className='app'>
+         <AuthFormWrapper>
+            <div>
+               <div className='pb-8 text-center text-2xl font-bold leading-relaxed'>
+                  შედით ანგარიშში
+               </div>
             </div>
-        </div>
-    );
+
+            <form onSubmit={submitForm}>
+               <input
+                  type='Email'
+                  placeholder='Email'
+                  className='input-bordered input my-1 w-full'
+               />
+               <input
+                  type='Password'
+                  placeholder='Password'
+                  className='input-bordered input my-1 w-full'
+               />
+               <button className='btn-primary btn w-full'>შესვლა</button>
+            </form>
+
+            <div className='my-2 text-center'>
+               <a href='#' className='link-primary mt-5 font-semibold'>
+                  პაროლი დაგავიწყდა?
+               </a>
+            </div>
+            <div className='relative my-10'>
+               <TextHr>სხვა საშუალებები</TextHr>
+            </div>
+
+            <div>
+               <GoogleButton onClick={() => {alert('123');}} />
+               <FacebookButton />
+               <BogButton />
+            </div>
+
+            <div className='relative my-10'>
+               <TextHr>
+                  <div className='my-2 text-center'>
+                     არ გაქვს ანგარიში?{' '}
+                     <Link href='/auth/register'>
+                        <a href='#' className='link-primary font-semibold'>
+                           დარეგისტრირდი{' '}
+                        </a>
+                     </Link>
+                  </div>
+               </TextHr>
+            </div>
+         </AuthFormWrapper>
+      </div>
+   );
 }
 export default login;
