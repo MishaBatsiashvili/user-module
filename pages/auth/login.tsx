@@ -18,7 +18,7 @@ export function login() {
       <div className='app'>
          <div className='auth-form'>
             <div>
-               <div className='pb-5 text-center text-4xl'>Log in</div>
+               <div className='pb-5 text-center text-4xl'>შესვლა</div>
             </div>
 
             <form onSubmit={submitForm}>
@@ -32,14 +32,16 @@ export function login() {
                   placeholder='Password'
                   className='input-bordered input w-full max-w-xs'
                />
-               <button className='btn-primary btn-wide btn'>Log In</button>
+               <button className='btn-primary btn-wide btn'>შესვლა</button>
             </form>
 
             <div className='my-2 text-center'>
-               <a href='#' className='link-primary mt-5'>Forgot Your Password?</a>
+               <a href='#' className='link-primary mt-5 font-semibold'>
+                  პაროლი დაგავიწყდა?
+               </a>
             </div>
-            <div className='relative my-8'>
-               <TextHr>or continue with</TextHr>
+            <div className='relative my-10'>
+               <TextHr>სხვა საშუალებები</TextHr>
             </div>
 
             <div>
@@ -48,8 +50,8 @@ export function login() {
                      <Image
                         src={google}
                         alt='Picture of the author'
-                        width={30}
-                        height={30}
+                        width={25}
+                        height={25}
                      />
                   </div>
                   Google
@@ -70,12 +72,14 @@ export function login() {
                </button>
             </div>
 
-            <div className='relative my-8'>
+            <div className='relative my-10'>
                <TextHr>
                   <div className='my-2 text-center'>
-                     New user?{' '}
+                     არ გაქვს ანგარიში?{' '}
                      <Link href='/auth/register'>
-                        <a href='#' className='link-primary'>Register now </a>
+                        <a href='#' className='link-primary font-semibold'>
+                           დარეგისტრირდი{' '}
+                        </a>
                      </Link>
                   </div>
                </TextHr>
