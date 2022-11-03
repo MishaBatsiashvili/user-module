@@ -1,15 +1,7 @@
 .auth-form {
-
-   & input {
-      max-width: 100%;
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-   }
-
    & button {
-      width: 100%;
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-      position: relative;
+      /* margin-top: 0.25rem; */
+      /* margin-bottom: 0.25rem; */
+      /* position: relative; */
    }
 }

@@ -1,12 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
-import google from '../../public/assets/google.png';
 import Link from 'next/link';
-import FacebookSvgIcon from '../../components/common/svg/FacebookSvgIcon';
-import BogSvgIcon from '../../components/common/svg/BogSvgIcon';
 import TextHr from '../../components/common/TextHr';
 import AuthFormWrapper from '../../components/features/auth/AuthFormWrapper';
-import AuthIconWrapper from '../../components/features/auth/AuthIconWrapper';
+import GoogleButton from '../../components/common/buttons/auth/GoogleButton';
+import FacebookButton from '../../components/common/buttons/auth/FacebookButton';
+import BogButton from '../../components/common/buttons/auth/BogButton';
 
 export function login() {
    const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -29,14 +27,14 @@ export function login() {
                <input
                   type='Email'
                   placeholder='Email'
-                  className='input-bordered input w-full'
+                  className='input-bordered input my-1 w-full'
                />
                <input
                   type='Password'
                   placeholder='Password'
-                  className='input-bordered input w-full'
+                  className='input-bordered input my-1 w-full'
                />
-               <button className='btn-primary btn-wide btn'>შესვლა</button>
+               <button className='btn-primary btn w-full'>შესვლა</button>
             </form>
 
             <div className='my-2 text-center'>
@@ -49,31 +47,9 @@ export function login() {
             </div>
 
             <div>
-               <button className='btn-secondary btn'>
-                  <AuthIconWrapper>
-                     <Image
-                        src={google}
-                        alt='Picture of the author'
-                        width={25}
-                        height={25}
-                     />
-                  </AuthIconWrapper>
-                  Google
-               </button>
-
-               <button className='btn bg-fb text-white hover:bg-fb-hover hover:text-white'>
-                  <AuthIconWrapper>
-                     <FacebookSvgIcon />
-                  </AuthIconWrapper>
-                  Facebook
-               </button>
-
-               <button className='group btn  bg-bog text-white hover:bg-bog-hover hover:text-white'>
-                  <AuthIconWrapper>
-                     <BogSvgIcon />
-                  </AuthIconWrapper>
-                  Bank of Georgia
-               </button>
+               <GoogleButton />
+               <FacebookButton />
+               <BogButton />
             </div>
 
             <div className='relative my-10'>
