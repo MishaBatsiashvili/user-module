@@ -7,7 +7,7 @@ const GoogleButton: React.FC<{
    onClick?: React.MouseEventHandler;
 }> = ({ onClick }) => {
    return (
-      <FullButton onClick={onClick} className='btn-secondary'>
+      <FullButton onClick={onClick} className='btn-secondary '>
          <AuthIconWrapper>
             <GoogleSvgIcon />
          </AuthIconWrapper>

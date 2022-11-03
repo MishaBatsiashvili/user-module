@@ -38,7 +38,7 @@ export function login() {
             </form>
 
             <div className='my-2 text-center'>
-               <a href='#' className='link-primary mt-5 font-semibold'>
+               <a href='#' className='link-primary link mt-5 font-semibold'>
                   პაროლი დაგავიწყდა?
                </a>
             </div>
@@ -47,7 +47,7 @@ export function login() {
             </div>
 
             <div>
-               <GoogleButton onClick={() => {alert('123');}} />
+               <GoogleButton onClick={() => { alert('123'); }} />
                <FacebookButton />
                <BogButton />
             </div>
@@ -57,7 +57,7 @@ export function login() {
                   <div className='my-2 text-center'>
                      არ გაქვს ანგარიში?{' '}
                      <Link href='/auth/register'>
-                        <a href='#' className='link-primary font-semibold'>
+                        <a href='#' className='link-primary link font-semibold'>
                            დარეგისტრირდი{' '}
                         </a>
                      </Link>
