@@ -1,13 +1,15 @@
 @import 'tailwindcss/base';
 
 @import 'tailwindcss/components';
+/* fonts */
+@import './fonts';
+/* /. */
+
+/* buttons */
 @import './buttons';
+/* /. */
 
 @import 'tailwindcss/utilities';
-
-a {
-   text-decorations: none;
-}
 
 .app {
    display: flex;
