@@ -7,6 +7,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import { Provider } from 'react-redux';
 import store from '../store';
 import Head from 'next/head';
+
 // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 config.autoAddCss = false;
 
@@ -36,14 +37,17 @@ take wolt as reference
 */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Provider store={store}>
-	<Head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	</Head>
-      <Component {...pageProps} />
-    </Provider>
-  );
+   return (
+      <Provider store={store}>
+         <Head>
+            <meta
+               name='viewport'
+               content='width=device-width, initial-scale=1.0'
+            />
+         </Head>
+         <Component {...pageProps} />
+      </Provider>
+   );
 }
 
 export default MyApp;
