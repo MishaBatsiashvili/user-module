@@ -5,6 +5,8 @@ import Link from 'next/link';
 import FacebookSvgIcon from '../../components/common/svg/FacebookSvgIcon';
 import BogSvgIcon from '../../components/common/svg/BogSvgIcon';
 import TextHr from '../../components/common/TextHr';
+import AuthFormWrapper from '../../components/features/auth/AuthFormWrapper';
+import AuthIconWrapper from '../../components/features/auth/AuthIconWrapper';
 
 export function login() {
    const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -16,7 +18,7 @@ export function login() {
 
    return (
       <div className='app'>
-         <div className='auth-form'>
+         <AuthFormWrapper>
             <div>
                <div className='pb-5 text-center text-4xl'>შესვლა</div>
             </div>
@@ -25,12 +27,12 @@ export function login() {
                <input
                   type='Email'
                   placeholder='Email'
-                  className='input-bordered input w-full max-w-xs'
+                  className='input-bordered input w-full'
                />
                <input
                   type='Password'
                   placeholder='Password'
-                  className='input-bordered input w-full max-w-xs'
+                  className='input-bordered input w-full'
                />
                <button className='btn-primary btn-wide btn'>შესვლა</button>
             </form>
@@ -46,28 +48,28 @@ export function login() {
 
             <div>
                <button className='btn-secondary btn'>
-                  <div className='auth-image-div'>
+                  <AuthIconWrapper>
                      <Image
                         src={google}
                         alt='Picture of the author'
                         width={25}
                         height={25}
                      />
-                  </div>
+                  </AuthIconWrapper>
                   Google
                </button>
 
                <button className='btn bg-fb text-white hover:bg-fb-hover hover:text-white'>
-                  <div className='auth-image-div'>
+                  <AuthIconWrapper>
                      <FacebookSvgIcon />
-                  </div>
+                  </AuthIconWrapper>
                   Facebook
                </button>
 
                <button className='group btn  bg-bog text-white hover:bg-bog-hover hover:text-white'>
-                  <div className='auth-image-div'>
+                  <AuthIconWrapper>
                      <BogSvgIcon />
-                  </div>
+                  </AuthIconWrapper>
                   Bank of Georgia
                </button>
             </div>
@@ -84,7 +86,7 @@ export function login() {
                   </div>
                </TextHr>
             </div>
-         </div>
+         </AuthFormWrapper>
       </div>
    );
 }
