@@ -1,18 +1,27 @@
-import Link from "next/link";
+import { default as cs } from 'classnames';
+import Link from 'next/link';
 
 //Create a functional component with text, href and active as props and use Link from next/link to link pages
 export interface INavItem {
    text: string;
    href: string;
-   active: boolean;
    router: any;
 }
 
 // eslint-disable-next-line no-undef
-const NavItem: React.FC<INavItem> = ({ text, href, active, router }) => {
+const NavItem: React.FC<INavItem> = ({ text, href, router }) => {
    return (
       <Link href={href}>
-         <div className={`btn btn-ghost rounded-btn nav__item  ${router?.asPath === href ? "active" : ""}`}>{text}</div>
+         <div
+            className={cs(
+               'tab tab-bordered mr-4 h-auto border-gray-300 pb-2 text-black opacity-100 transition-all duration-200 ease-linear',
+               {
+                  'tab-active': router?.asPath === href,
+               }
+            )}
+         >
+            {text}
+         </div>
       </Link>
    );
 };
