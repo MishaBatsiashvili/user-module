@@ -15,7 +15,7 @@ export function login() {
    };
 
    return (
-      <div className='app'>
+      <div className='auth-form'>
          <AuthFormWrapper>
             <div>
                <div className='pb-8 text-center text-2xl font-bold leading-relaxed'>

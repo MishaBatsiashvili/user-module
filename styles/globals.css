@@ -11,13 +11,20 @@
 
 @import 'tailwindcss/utilities';
 
-.app {
+.auth-form {
    display: flex;
    justify-content: center;
    align-items: center;
    width: 100%;
    min-height: 100vh;
    background-color: #ffffff;
+}
+
+.profile-form {
+   max-width: 1000px;
+   margin: 1rem auto;
+   position: relative;
+   padding: 2.1875rem 0;
 }
 
 .hr-line {
