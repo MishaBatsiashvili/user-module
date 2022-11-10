@@ -13,38 +13,39 @@ const Navbar: React.FC = () => {
       // { text: "Order history", href: "/profile/order-history" },
    ];
 
+   const userBtn = (
+      <div className='flex flex-1 justify-end px-2'>
+         <div className='flex items-stretch'>
+            <div className='dropdown-end dropdown'>
+               <label tabIndex={0} className='btn-secondary rounded-btn btn'>
+                  user
+               </label>
+               <ul
+                  tabIndex={0}
+                  className='dropdown-content menu rounded-box mt-4 w-52 bg-base-100 p-2 shadow'
+               >
+                  <li>
+                     <a>username</a>
+                  </li>
+                  <li>
+                     <a>log out </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   );
+
    return (
       <header>
          <nav className={`nav min-w-96 m-auto mt-12 max-w-6xl`}>
+            {userBtn}
             <div className='navbar rounded-box'>
-               <div className='nav__menu-list border-b-2 border-solid border-gray-300 px-3'>
+               <div className='nav__menu-list w-full border-b-2 border-solid border-gray-300 px-3'>
                   <div className='tabs -mb-0.5'>
                      {MENU_LIST.map((menu) => (
                         <NavItem key={menu.text} {...menu} router={router} />
                      ))}
-                  </div>
-               </div>
-               <div className='flex flex-1 justify-end px-2'>
-                  <div className='flex items-stretch'>
-                     <div className='dropdown-end dropdown'>
-                        <label
-                           tabIndex={0}
-                           className='btn-ghost rounded-btn btn'
-                        >
-                           user
-                        </label>
-                        <ul
-                           tabIndex={0}
-                           className='dropdown-content menu rounded-box mt-4 w-52 bg-base-100 p-2 shadow'
-                        >
-                           <li>
-                              <a>username</a>
-                           </li>
-                           <li>
-                              <a>log out </a>
-                           </li>
-                        </ul>
-                     </div>
                   </div>
                </div>
             </div>
