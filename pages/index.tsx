@@ -4,6 +4,7 @@ import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import Navbar from '../components/navbar/Navbar';
 import { useState } from 'react';
 import Layout from '../components/layout/Layout';
+import type { NextPageWithLayout } from './_app';
 
 const Home: NextPageWithLayout = () => {
    return (
