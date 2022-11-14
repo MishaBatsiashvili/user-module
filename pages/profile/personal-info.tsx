@@ -4,12 +4,12 @@ import type { NextPageWithLayout } from '../_app';
 const Personal: NextPageWithLayout = () => {
    return (
       <>
-         <div className='profile-form'>
+         <div className='container mx-auto max-w-5xl px-2 mt-10'>
             <div className='flex flex-row'>
-               <div className='flex flex-col items-center'>
+               <div className='flex flex-col items-center min-w-[96px]'>
                   {/* This is temporary - should be turned into next/image component */}
                   <img
-                     className='h-24 w-24 rounded-full '
+                     className='h-24 w-24 rounded-full border-4 border-inherit '
                      src={
                         'https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1-400x400.jpg.webp'
                      }
@@ -18,21 +18,21 @@ const Personal: NextPageWithLayout = () => {
                      height='512'
                   />
                   {/* /. */}
-                  <div className='text-lg font-bold'>Mr Capybara</div>
+                  <label className='link-primary link font-semibold'>Edit</label>
                </div>
 
-               <div className='ml-12 flex flex-col font-bold'>
-                  <div className='flex flex-row items-center justify-between text-lg'>
-                     Capybara
+               <div className='ml-6 md:ml-12 '>
+                  <div className='flex flex-row items-center justify-between text-3xl font-bold'>
+                     Mr Capybara
                   </div>
-                  <div className='mt-5 flex flex-row'>
-                     <div className='mr-12 flex flex-col'>
-                        <div>mail</div>
-                        <div>lala@lala.com</div>
+                  <div className='mt-5 columns-1 sm:columns-2'>
+                     <div className='mr-6 md:mr-12 flex flex-col'>
+                        <div className="font-bold">Mail</div>
+                        <div>lalaasdasd@lala.com</div>
                      </div>
 
                      <div className='flex flex-col'>
-                        <div>number</div>
+                        <div className="font-bold">Number</div>
                         <div>555222111</div>
                      </div>
                   </div>

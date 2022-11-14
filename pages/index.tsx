@@ -9,7 +9,7 @@ import type { NextPageWithLayout } from './_app';
 const Home: NextPageWithLayout = () => {
    return (
       <>
-         <div className='auth-form'>
+         <div className='auth-form container mx-auto '>
             {/* <Icon icon={faAddressBook}/> */}
             <Link href='/auth/login'>
                <button className='btn mr-2'>login</button>
