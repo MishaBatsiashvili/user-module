@@ -14,7 +14,7 @@ const NavItem: React.FC<INavItem> = ({ text, href, router }) => {
       <Link href={href}>
          <div
             className={cs(
-               'tab tab-bordered mr-4 h-auto border-gray-300 w-full sm:w-auto pb-2 text-black opacity-100 transition-all duration-200 ease-linear text-lg py-3 sm:py-0 ',
+               'tab tab-bordered mr-4 h-auto border-gray-300 w-auto pb-2 text-black opacity-100 transition-all duration-200 ease-linear text-lg  horizontal-scroll whitespace-nowrap',
                {
                   'tab-active active-navbar-shadow': router?.asPath === href,
                }

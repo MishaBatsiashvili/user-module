@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import Head from 'next/head';
 import { NextPage } from 'next';
+// import swiper css
+import 'swiper/css';
 
 // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 config.autoAddCss = false;

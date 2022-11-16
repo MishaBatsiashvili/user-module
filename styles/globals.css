@@ -11,6 +11,8 @@
 
 @import 'tailwindcss/utilities';
 
+/* @import 'swiper/css'; */
+
 .auth-form {
    display: flex;
    justify-content: center;
@@ -29,7 +31,6 @@
    min-width: 450px;
    margin-left: 30px;
    margin-right: 30px;
-
    padding-right: 30px;
 }
 
