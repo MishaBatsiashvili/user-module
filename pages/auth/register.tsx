@@ -12,7 +12,7 @@ export function register() {
    };
 
    return (
-      <div className='app'>
+      <div className='auth-form'>
          <AuthFormWrapper>
 
             <div>

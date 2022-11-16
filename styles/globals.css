@@ -11,13 +11,27 @@
 
 @import 'tailwindcss/utilities';
 
-.app {
+/* @import 'swiper/css'; */
+
+.auth-form {
    display: flex;
    justify-content: center;
    align-items: center;
    width: 100%;
    min-height: 100vh;
    background-color: #ffffff;
+   min-width: 450px;
+}
+
+.profile-form {
+   max-width: 1000px;
+   margin: 1rem auto;
+   position: relative;
+   padding: 2.1875rem 0;
+   min-width: 450px;
+   margin-left: 30px;
+   margin-right: 30px;
+   padding-right: 30px;
 }
 
 .hr-line {
@@ -29,4 +43,8 @@
    padding: 0px 20px;
    text-align: center;
    white-space: nowrap;
+}
+
+.active-navbar-shadow {
+   text-shadow: rgb(32 33 37) 1px 0px;
 }
