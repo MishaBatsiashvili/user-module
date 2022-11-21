@@ -5,10 +5,11 @@ const FullButton: React.FC<
    {
       children: React.ReactNode;
       onClick?: React.MouseEventHandler;
+      disabled?: boolean | undefined
    } & React.HTMLAttributes<HTMLDivElement>
-> = ({ children, className = '', onClick }) => {
+> = ({ children, className = '', onClick, disabled = false }) => {
    return (
-      <Button onClick={onClick} className={`w-full ${className}`}>
+      <Button onClick={onClick} disabled={disabled} className={`w-full ${className}`}>
          {children}
       </Button>
    );

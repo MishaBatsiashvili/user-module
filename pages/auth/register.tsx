@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import AuthFormWrapper from "../../components/features/auth/AuthFormWrapper";
-export interface IAppProps { }
 
 export function register() {
    const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
