@@ -8,7 +8,17 @@ input
 + type - (text, email, password)
 */
 
-const TextInput = ({
+interface ITextInput {
+   onChange: () => void
+   onBlur: () => void
+   name: string
+   value: string
+   type: 'text' | 'email' | 'password' | 'number'
+   placeholder: string
+   label: string
+}
+
+const TextInput: React.FC<ITextInput> = ({
    onChange,
    onBlur,
    name,
@@ -18,6 +28,7 @@ const TextInput = ({
    placeholder = '',
    label = '',
 }) => {
+
    const renderError = () => {
       return (
          <ErrorMessage name={name}>
@@ -38,7 +49,7 @@ const TextInput = ({
       }
 
       return (
-         <label for={name} className='label'>
+         <label htmlFor={name} className='label'>
             <span className='label-text'>{label}</span>
          </label>
       );

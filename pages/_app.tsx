@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import Head from 'next/head';
 import { NextPage } from 'next';
+import { setLocale } from 'yup';
 // import swiper css
 import 'swiper/css';
 
@@ -48,6 +49,21 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
    Component: NextPageWithLayout;
 };
+
+setLocale({
+   // use constant translation keys for messages without values
+   mixed: {
+     default: 'field_invalid',
+   },
+   // use functions to generate an error object that includes the value from the schema
+   number: {
+     min: ({ min }) => ({ key: 'field_too_short', values: { min } }),
+     max: ({ max }) => ({ key: 'field_too_big', values: { max } }),
+   },
+   string: {
+      email: 'hello'
+   }
+ });
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
    // Use the layout defined at the page level, if available

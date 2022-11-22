@@ -5,6 +5,11 @@ import AuthFormWrapper from '../../components/features/auth/AuthFormWrapper';
 import GoogleButton from '../../components/common/buttons/auth/GoogleButton';
 import FacebookButton from '../../components/common/buttons/auth/FacebookButton';
 import BogButton from '../../components/common/buttons/auth/BogButton';
+import { Field, Form, Formik } from 'formik';
+import FullButton from '../../components/common/buttons/FullButton';
+import TextInput from '../../components/common/form/TextInput';
+import * as yup from 'yup';
+
 
 export function login() {
    const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -13,6 +18,16 @@ export function login() {
       // Do something
       console.log('submited');
    };
+
+   const initialValues = {
+      email: '',
+      password: '',
+   };
+
+   const FormValidationSchema = yup.object().shape({
+      email: yup.string().email().required('Required'),
+      password: yup.string().required('Required'),
+   });
 
    return (
       <div className='auth-form'>
@@ -23,19 +38,34 @@ export function login() {
                </div>
             </div>
 
-            <form onSubmit={submitForm}>
-               <input
-                  type='Email'
-                  placeholder='Email'
-                  className='input-bordered input my-1 w-full'
-               />
-               <input
-                  type='Password'
-                  placeholder='Password'
-                  className='input-bordered input my-1 w-full'
-               />
-               <button className='btn-primary btn w-full'>შესვლა</button>
-            </form>
+            <Formik
+               initialValues={initialValues}
+               validationSchema={FormValidationSchema}
+               onSubmit={(values, { setSubmitting }) => {
+                  setTimeout(() => {
+                     alert(JSON.stringify(values, null, 2));
+                     setSubmitting(false);
+                  }, 400);
+               }}
+            >
+               {({ isSubmitting }) => (
+                  <Form>
+                     <Field
+                        type='text'
+                        as={TextInput}
+                        label='Email'
+                        name='email'
+                     />
+                     <Field
+                        type='password'
+                        as={TextInput}
+                        label='Password'
+                        name='password'
+                     />
+                     <FullButton disabled={isSubmitting}>Submit</FullButton>
+                  </Form>
+               )}
+            </Formik>
 
             <div className='my-2 text-center'>
                <a href='#' className='link-primary link mt-5 font-semibold'>
@@ -47,7 +77,11 @@ export function login() {
             </div>
 
             <div>
-               <GoogleButton onClick={() => { alert('123'); }} />
+               <GoogleButton
+                  onClick={() => {
+                     alert('123');
+                  }}
+               />
                <FacebookButton />
                <BogButton />
             </div>

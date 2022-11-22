@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import KovzySvgIcon from '../common/svg/KovzySvgIcon';
 
-export const UserDropdown = () => {
+export const UserDropdown: React.FC = () => {
    return (
       <div className='flex flex-1 justify-center px-2 pb-2 '>
          <div className='absolute pt-1'>
