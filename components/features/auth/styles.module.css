@@ -1,1 +1,3 @@
-
+.w-authWrapper-mobile {
+   width: calc(100% - 20px);
+}

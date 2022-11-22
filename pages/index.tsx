@@ -5,24 +5,27 @@ import Navbar from '../components/navbar/Navbar';
 import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import type { NextPageWithLayout } from './_app';
+import AuthFormWrapper from '../components/features/auth/AuthFormWrapper';
+import Container from '../components/layout/Container';
+import Box from '../components/layout/Box';
+
+// <Icon icon={faAddressBook}/>
 
 const Home: NextPageWithLayout = () => {
    return (
-      <>
-         <div className='auth-form container mx-auto '>
-            {/* <Icon icon={faAddressBook}/> */}
+      <Container className='flex-grow'>
+         <Box className='h-full'>
             <Link href='/auth/login'>
                <button className='btn mr-2'>login</button>
             </Link>
             <Link href='/auth/register'>
                <button className='btn ml-2'>register</button>
             </Link>
-            <Icon icon={faAddressBook} />
             <Link href='/profile/'>
                <button className='btn ml-2'>profile</button>
             </Link>
-         </div>
-      </>
+         </Box>
+      </Container>
    );
 };
 

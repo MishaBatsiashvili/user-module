@@ -16,6 +16,9 @@ module.exports = {
             'fb-hover': 'rgba(57, 117, 234, 0.88)',
             google: '#0F9D58',
          },
+         width: {
+            'authWrapper-mobile': 'calc(100% - 20px)'
+         }
       },
    },
    plugins: [require('daisyui')],

@@ -50,19 +50,28 @@ type AppPropsWithLayout = AppProps & {
    Component: NextPageWithLayout;
 };
 
+// 1. set-up i18next-react language translations and language chaning
+
+// 2. set-up strings for the errors
+
+// 3. set-up/update translated errors for yup using setLocale, on load and on language changed
+
 setLocale({
    // use constant translation keys for messages without values
    mixed: {
      default: 'field_invalid',
    },
+
    // use functions to generate an error object that includes the value from the schema
    number: {
      min: ({ min }) => ({ key: 'field_too_short', values: { min } }),
      max: ({ max }) => ({ key: 'field_too_big', values: { max } }),
    },
+
    string: {
       email: 'hello'
    }
+
  });
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
