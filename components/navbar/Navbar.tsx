@@ -7,8 +7,13 @@ import UserDropdown from './UserDropdown';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from '../layout/Container';
+import { useTranslation } from 'react-i18next';
+
 const Navbar: React.FC = () => {
    const router = useRouter();
+   const { t } = useTranslation('common');
+
+
    const MENU_LIST: { text: string; href: string }[] = [
       // { text: 'Home', href: '/' },
       { text: 'Personal info', href: '/profile/personal-info' },

@@ -1,20 +1,30 @@
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
-import Navbar from '../components/navbar/Navbar';
-import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import type { NextPageWithLayout } from './_app';
-import AuthFormWrapper from '../components/features/auth/AuthFormWrapper';
 import Container from '../components/layout/Container';
 import Box from '../components/layout/Box';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
+
 
 // <Icon icon={faAddressBook}/>
+export async function getServerSideProps({locale}) {
+   console.log(locale);
+   return {
+      props: {
+         ...(await serverSideTranslations(locale))
+      },
+   };
+}
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = (props) => {
+   const { t } = useTranslation(['common', 'errors']);
+
    return (
       <Container className='flex-grow'>
          <Box className='h-full'>
+            <h3>{t('desc')}</h3>
+            <h3>{t('errors:invalidEmail')}</h3>
             <Link href='/auth/login'>
                <button className='btn mr-2'>login</button>
             </Link>

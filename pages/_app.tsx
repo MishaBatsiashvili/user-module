@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
 
@@ -9,9 +10,11 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import Head from 'next/head';
 import { NextPage } from 'next';
-import { setLocale } from 'yup';
+
 // import swiper css
 import 'swiper/css';
+import { appWithTranslation } from 'next-i18next';
+import useYupErrorLocalizations from '../hooks/useYupErrorLocalization';
 
 // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 config.autoAddCss = false;
@@ -56,28 +59,12 @@ type AppPropsWithLayout = AppProps & {
 
 // 3. set-up/update translated errors for yup using setLocale, on load and on language changed
 
-setLocale({
-   // use constant translation keys for messages without values
-   mixed: {
-     default: 'field_invalid',
-   },
-
-   // use functions to generate an error object that includes the value from the schema
-   number: {
-     min: ({ min }) => ({ key: 'field_too_short', values: { min } }),
-     max: ({ max }) => ({ key: 'field_too_big', values: { max } }),
-   },
-
-   string: {
-      email: 'hello'
-   }
-
- });
-
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+function App({ Component, pageProps }: AppPropsWithLayout) {
    // Use the layout defined at the page level, if available
    const getLayout = Component.getLayout ?? ((page: any) => page);
    const component = getLayout(<Component {...pageProps} />);
+   
+   useYupErrorLocalizations();
 
    return (
       <Provider store={store}>
@@ -92,4 +79,4 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
    );
 }
 
-export default MyApp;
+export default appWithTranslation(App);

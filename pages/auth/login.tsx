@@ -9,24 +9,30 @@ import { Field, Form, Formik } from 'formik';
 import FullButton from '../../components/common/buttons/FullButton';
 import TextInput from '../../components/common/form/TextInput';
 import * as yup from 'yup';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export function login() {
-   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
-      // Preventing the page from reloading
-      event.preventDefault();
-      // Do something
-      console.log('submited');
+export async function getServerSideProps({ locale }) {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale)),
+      },
    };
+}
 
+export function Login() {
    const initialValues = {
       email: '',
       password: '',
    };
 
    const FormValidationSchema = yup.object().shape({
-      email: yup.string().email().required('Required'),
-      password: yup.string().required('Required'),
+      email: yup.string().email().required(),
+      password: yup.string().required(),
    });
+
+   const submitForm = (values: typeof initialValues) => {
+      console.log(values, 'submited');
+   };
 
    return (
       <AuthFormWrapper>
@@ -39,11 +45,14 @@ export function login() {
          <Formik
             initialValues={initialValues}
             validationSchema={FormValidationSchema}
-            onSubmit={(values, { setSubmitting }) => {
-               setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  setSubmitting(false);
-               }, 400);
+            onSubmit={async (values, { setSubmitting }) => {
+               setSubmitting(true);
+               await new Promise((resolve) => {
+                  setTimeout(() => {
+                     submitForm(values)
+                     resolve(1);
+                  }, 2000);
+               });
             }}
          >
             {({ isSubmitting }) => (
@@ -99,4 +108,4 @@ export function login() {
       </AuthFormWrapper>
    );
 }
-export default login;
+export default Login;

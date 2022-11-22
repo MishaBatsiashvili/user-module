@@ -3,9 +3,10 @@ import Button from './Button';
 
 const FullButton: React.FC<
    {
-      children: React.ReactNode;
-      onClick?: React.MouseEventHandler;
+      children: React.ReactNode
+      onClick?: React.MouseEventHandler
       disabled?: boolean | undefined
+      className?: string
    } & React.HTMLAttributes<HTMLDivElement>
 > = ({ children, className = '', onClick, disabled = false }) => {
    return (
