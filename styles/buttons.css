@@ -7,3 +7,7 @@
       border-color: theme('colors.gray.300');
    }
 }
+
+.btn-error {
+   color: theme('colors.white');
+}

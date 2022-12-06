@@ -1,18 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
-import KovzySvgIcon from '../common/svg/KovzySvgIcon';
+import { useRouter } from 'next/router';
 
 export const UserDropdown: React.FC = () => {
+   const router = useRouter();
+
    return (
-      <div className='flex flex-1 justify-center px-2 pb-2 '>
-         <div className='absolute pt-1'>
-            <Link href={'/'}>
-               <div>
-                  <KovzySvgIcon />
-               </div>
-            </Link>
-         </div>
-         <div className='flex flex-1 justify-end '>
+      <div className='flex flex-1 justify-end '>
             <div className='flex flex-row '>
                <div className='dropdown-end dropdown'>
                   <label tabIndex={0} className='swap swap-rotate btn-circle'>
@@ -32,31 +26,39 @@ export const UserDropdown: React.FC = () => {
                      className='dropdown-content menu rounded-box mt-4 w-52 bg-base-100 p-2 drop-shadow-2xl'
                   >
                      <div className='collapse mb-1'>
-                        <input id='checlbox' type='checkbox' className='min-h-0' />
-                        <div className='min-h-0 block collapse-title p-0 z-10'>
-                           <label htmlFor='checlbox' className='btn-secondary btn w-full'>
+                        <input
+                           id='checlbox'
+                           type='checkbox'
+                           className='min-h-0'
+                        />
+                        <div className='collapse-title z-10 block min-h-0 p-0'>
+                           <label
+                              htmlFor='checlbox'
+                              className='btn-secondary btn w-full'
+                           >
                               Languages
                            </label>
                         </div>
-                        <ul className='collapse-content px-0 mt-1'>
+                        <ul className='collapse-content mt-1 px-0'>
                            <li>
-                              <Link href={'ge'} className='hidden'>
-                                 ქართული
+                              <Link href={router.pathname} locale={false}>
+                                 ქართული 1
                               </Link>
                            </li>
                            <li>
-                              <Link href={'en'} className='block bg-black'>
-                                 English
+                              <Link href={router.pathname} locale={'en'}>
+                                 English 1
                               </Link>
                            </li>
                         </ul>
                      </div>
-                     <button className='btn-error btn text-base-100'>Log Out</button>
+                     <button className='btn-error btn text-base-100'>
+                        Log Out
+                     </button>
                   </div>
                </div>
             </div>
          </div>
-      </div>
    );
 };
 

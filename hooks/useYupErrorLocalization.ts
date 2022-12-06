@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { setLocale } from 'yup';
 import { useTranslation } from 'next-i18next';
 import { LocaleObject } from 'yup/lib/locale';
+import { useRouter } from 'next/router';
 
 const useYupErrorLocalizations = () => {
    const { t } = useTranslation('errors');
    const [data, setData] = useState<LocaleObject | null>(null);
+   const router = useRouter();
 
    useEffect(() => {
       const object: LocaleObject = {
@@ -20,6 +22,7 @@ const useYupErrorLocalizations = () => {
 
       setLocale(object);
       setData(object);
+
    }, [t]);
 
    return data;

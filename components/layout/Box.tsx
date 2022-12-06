@@ -6,7 +6,7 @@ const Box: React.FC<{
 }> = ({ children, className }) => {
    return (
       <div
-         className={`rounded-md bg-white px-7 pt-8 pb-7 shadow-2xl ring-1 ring-gray-200 ${className}`}
+         className={`rounded-md bg-white px-7 pt-8 pb-7 shadow-2xl ring-1 ring-gray-100 ${className}`}
       >
          {children}
       </div>

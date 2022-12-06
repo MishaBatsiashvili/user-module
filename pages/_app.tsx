@@ -15,6 +15,7 @@ import { NextPage } from 'next';
 import 'swiper/css';
 import { appWithTranslation } from 'next-i18next';
 import useYupErrorLocalizations from '../hooks/useYupErrorLocalization';
+import { AnimatePresence } from 'framer-motion';
 
 // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 config.autoAddCss = false;
@@ -63,7 +64,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
    // Use the layout defined at the page level, if available
    const getLayout = Component.getLayout ?? ((page: any) => page);
    const component = getLayout(<Component {...pageProps} />);
-   
+
    useYupErrorLocalizations();
 
    return (
@@ -74,7 +75,10 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
                content='width=device-width, initial-scale=1.0'
             />
          </Head>
-         {component}
+         <AnimatePresence mode='wait'>
+            {component}
+         </AnimatePresence>
+         <div id='modal'></div>
       </Provider>
    );
 }

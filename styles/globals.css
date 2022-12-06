@@ -14,7 +14,8 @@
 /* @import 'swiper/css'; */
 
 html,
-body, #__next {
+body,
+#__next {
    height: 100%;
 }
 
@@ -54,4 +55,15 @@ body, #__next {
 
 .active-navbar-shadow {
    text-shadow: rgb(32 33 37) 1px 0px;
+}
+
+.dropdown .dropdown-content {
+   display: none;
+}
+
+.dropdown.dropdown-open .dropdown-content,
+.dropdown.dropdown-hover:hover .dropdown-content,
+.dropdown:not(.dropdown-hover):focus .dropdown-content,
+.dropdown:not(.dropdown-hover):focus-within .dropdown-content {
+   display: flex;
 }
