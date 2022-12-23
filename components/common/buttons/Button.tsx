@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-const Button: React.FC<
-   {
-      children: React.ReactNode;
-      onClick?: React.MouseEventHandler;
-   } & React.HTMLAttributes<HTMLDivElement>
-> = ({ children, className = '', onClick }) => {
+export type ButtonPropsType = {
+   children: React.ReactNode;
+   onClick?: React.MouseEventHandler;
+   className?: string;
+} & React.HTMLAttributes<HTMLDivElement> &
+   ButtonHTMLAttributes<unknown>;
+
+const Button: React.FC<ButtonPropsType> = ({
+   children,
+   className = '',
+   onClick,
+   disabled = false,
+   type = 'submit',
+}) => {
    return (
       <button
+         type={type}
+         disabled={disabled}
          onClick={onClick}
          className={`group btn relative mb-2 ${className}`}
       >

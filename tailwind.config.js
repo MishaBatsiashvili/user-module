@@ -16,6 +16,23 @@ module.exports = {
             'fb-hover': 'rgba(57, 117, 234, 0.88)',
             google: '#0F9D58',
          },
+         width: {
+            'authWrapper-mobile': 'calc(100% - 20px)',
+         },
+         keyframes: {
+            fadeInHalf: {
+               '0%': { opacity: 0 },
+               '100%': { opacity: 0.5 },
+            },
+            fadeIn: {
+               '0%': { opacity: 0 },
+               '100%': { opacity: 1 },
+            },
+         },
+         animation: {
+            fadeInHalf: 'fadeInHalf 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+            fadeIn: 'fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+         }
       },
    },
    plugins: [require('daisyui')],

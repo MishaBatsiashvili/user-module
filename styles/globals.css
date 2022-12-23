@@ -13,6 +13,13 @@
 
 /* @import 'swiper/css'; */
 
+html,
+body,
+#__next {
+   height: 100%;
+}
+
+/*
 .auth-form {
    display: flex;
    justify-content: center;
@@ -22,6 +29,7 @@
    background-color: #ffffff;
    min-width: 450px;
 }
+*/
 
 .profile-form {
    max-width: 1000px;
@@ -47,4 +55,15 @@
 
 .active-navbar-shadow {
    text-shadow: rgb(32 33 37) 1px 0px;
+}
+
+.dropdown .dropdown-content {
+   display: none;
+}
+
+.dropdown.dropdown-open .dropdown-content,
+.dropdown.dropdown-hover:hover .dropdown-content,
+.dropdown:not(.dropdown-hover):focus .dropdown-content,
+.dropdown:not(.dropdown-hover):focus-within .dropdown-content {
+   display: flex;
 }

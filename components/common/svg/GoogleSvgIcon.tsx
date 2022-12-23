@@ -11,17 +11,17 @@ export default function GoogleSvgIcon({ width = 25, height = 25 }) {
          <svg
             viewBox='0 0 20 20'
             xmlns='http://www.w3.org/2000/svg'
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            stroke-linejoin='round'
-            stroke-miterlimit='2'
+            fillRule='evenodd'
+            clipRule='evenodd'
+            strokeLinejoin='round'
+            strokeMiterlimit='2'
          >
             <g transform='translate(-.06 -.064)'>
                <path fill='none' d='M.06.064h19.548v19.969H.06z'></path>
                <clipPath id='google_icon_svg__a'>
                   <path d='M.06.064h19.548v19.969H.06z'></path>
                </clipPath>
-               <g clip-path='url(#google_icon_svg__a)'>
+               <g clipPath='url(#google_icon_svg__a)'>
                   <path fill='none' d='M.06.063h19.475v19.883H.061z'></path>
                   <path
                      d='M19.55 10.257c0-.705-.063-1.382-.18-2.031h-9.354v3.841h5.345a4.572 4.572 0 01-1.982 2.997v2.493h3.21c1.877-1.73 2.961-4.276 2.961-7.3z'
