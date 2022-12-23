@@ -20,31 +20,6 @@ import { AnimatePresence } from 'framer-motion';
 // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 config.autoAddCss = false;
 
-/*
-login, register - fb, google, mail, internet bank
-
-profile data:
-   number,
-   addresses,
-   misamartebi daematos rukaze da aseve xelit chawera da rukaze modzebna
-   baratis mibma
-   order history
-
-page:
-   profile
-      number,
-      username
-      gadasasvlelebi sxva gverdebze
-   misamartebi
-      naxva
-      damateba/washala/shecvla
-   order history
-   cards
-
-
-take wolt as reference
-*/
-
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
    // eslint-disable-next-line no-unused-vars
    getLayout?: (page: ReactElement) => ReactNode;
